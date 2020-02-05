@@ -1,14 +1,17 @@
 import React from "react"
 
-type EventSourceConnectionStatus = "connected" | "disconnected" | "connecting"
+export type EventSourceConnectionStatus =
+    | "connected"
+    | "disconnected"
+    | "connecting"
 
-type Message = {
+export type Message = {
     origin: string
     lastEventId: string
     data: any
 }
 
-interface Config {
+interface UseEventSourceConfig {
     autoConnect: boolean
 }
 
@@ -16,7 +19,7 @@ const Defaults = { autoConnect: true }
 function useEventSource(
     url: string,
     onMessage: (msg: Message) => void,
-    config: Config
+    config: UseEventSourceConfig
 ) {
     const options = { ...Defaults, ...config }
 
