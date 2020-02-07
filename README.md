@@ -1,4 +1,7 @@
 # use-event-source
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/camflan/use-event-source.svg)](https://greenkeeper.io/)
+
 React hook for subscribing to an SSE endpoint
 
 
