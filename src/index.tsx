@@ -11,8 +11,13 @@ export type Message = {
     data: any
 }
 
+interface EventSourceOptions {
+    withCredentials: boolean
+}
+
 interface UseEventSourceConfig {
     autoConnect: boolean
+    eventSourceConfig: EventSourceOptions
 }
 
 const Defaults = { autoConnect: true }
@@ -30,7 +35,7 @@ function useEventSource(
     const streamRef = React.useRef<EventSource>()
 
     const openStream = React.useCallback(() => {
-        const stream = new EventSource(url)
+        const stream = new EventSource(url, options.eventSourceConfig)
         stream.onopen = () => setConnectionStatus("connected")
         stream.onerror = msg => void setError(msg as ErrorEvent)
         stream.onmessage = onMessage
