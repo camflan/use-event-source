@@ -34,7 +34,7 @@
   "module": "dist/use-event-source.esm.js",
   "devDependencies": {
     "@types/jest": "^25.1.2",
-    "@types/react": "^16.9.23",
+    "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.5",
     "husky": "^4.2.3",
     "react": "^16.12.0",
